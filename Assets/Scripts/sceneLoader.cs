@@ -5,6 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class sceneLoader : MonoBehaviour
 {  
+    public void Graj() 
+    {
+        SceneManager.LoadScene(1, LoadSceneMode.Additive);
+        
+    }
+   
+
    
     public void quitGame()
     {
