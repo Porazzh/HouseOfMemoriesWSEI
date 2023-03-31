@@ -27,7 +27,6 @@ public class movement : MonoBehaviour
     void FixedUpdate()
     {
         rb2D.velocity = movementDirection * Time.deltaTime * moveSpeed;
-        rb2D.SetRotation(0);    
     }
 }
 
