@@ -6,32 +6,27 @@ using UnityEngine;
 public class movement : MonoBehaviour
 {
     // Start is called before the first frame update
+    private Rigidbody2D rb2D;
+
+    
+
+    public float moveSpeed;
+    private Vector2 movementDirection;
 
     void Start()
     {
-
+        rb2D = gameObject.GetComponent<Rigidbody2D>();
     }
-    
+
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.position += transform.right * (Time.deltaTime * 5);
-        }
-        else if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.position -= transform.right * (Time.deltaTime * 5);
-        }
-
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            transform.position += transform.up * (Time.deltaTime * 5);
-        }
-        else if (Input.GetKey(KeyCode.DownArrow))
-        {
-            transform.position -= transform.up * (Time.deltaTime * 5);
-        }
+        movementDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+    }
+    void FixedUpdate()
+    {
+        rb2D.velocity = movementDirection * Time.deltaTime * moveSpeed;
     }
 }
 
