@@ -11,8 +11,7 @@ public class movement : MonoBehaviour
     
 
     public float moveSpeed;
-    private float horizontalMove;
-    private float verticalMove;
+    private Vector2 movementDirection;
 
     void Start()
     {
@@ -23,27 +22,12 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontalMove = Input.GetAxisRaw("Horizontal");
-        verticalMove = Input.GetAxisRaw("Vertical");
+        movementDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
     }
     void FixedUpdate()
     {
-
-        if(horizontalMove > 0.1f || horizontalMove < 0.1f)
-        {
-            rb2D.AddForce(new Vector2(horizontalMove * moveSpeed, 0f));
-        }else
-        {
-            rb2D.AddForce(new Vector2(0f, 0f));
-        }
-        if(verticalMove > 0.1f || verticalMove < 0.1f)
-        {
-            rb2D.AddForce(new Vector2(0f, verticalMove * moveSpeed));
-        }else if(verticalMove == 0f)
-        {
-            rb2D.AddForce(new Vector2(0f,-moveSpeed));
-        }
-           
+        rb2D.velocity = movementDirection * Time.deltaTime * moveSpeed;
+        rb2D.SetRotation(0);    
     }
 }
 
