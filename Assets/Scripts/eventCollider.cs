@@ -10,11 +10,7 @@ public class eventCollider : MonoBehaviour
 {
     if (other.tag == "Player")
     {
-        for (int i = 0; i < 50; i++)
-        {
-            Camera.main.orthographicSize -= 0.1f;
-           
-        }
+            Camera.main.orthographicSize = 5f;
     }
 }
 
@@ -22,12 +18,7 @@ void OnTriggerExit2D(Collider2D other)
 {
     if (other.tag == "Player")
     {
-        for (int i = 0; i < 50;i++)
-        {
-            Camera.main.orthographicSize += 0.1f;
-
-        }
-
+            Camera.main.orthographicSize = 10f;
     }
 }
 }
