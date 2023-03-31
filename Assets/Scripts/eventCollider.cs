@@ -10,7 +10,7 @@ public class eventCollider : MonoBehaviour
 {
     if (other.tag == "Player")
     {
-            Camera.main.orthographicSize = 5f;
+            Camera.main.orthographicSize = 6f;
     }
 }
 
