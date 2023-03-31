@@ -5,15 +5,23 @@ using UnityEngine;
 public class camera : MonoBehaviour
 {
     public GameObject player;
-    
-    void Start()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-              
-    }
-
-    
-    void Update()
-    {
-        transform.position = new Vector3(player.transform.position.x, player.transform.position.y, -10);
+        if (collision.gameObject.tag == "zmianaKameryEvent")
+        {
+            if (Camera.main.orthographicSize == 5f)
+            {
+                for (float i = 0; i < 50; i += 1)
+                {
+                    Camera.main.orthographicSize += 0.1f;
+                    new WaitForSeconds(5000f);
+                }
+            }
+            else
+            {
+                Camera.main.orthographicSize = 5f;
+            }
+        }
     }
 }
+
