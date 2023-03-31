@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class EventTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    void OnTriggerEnter(Collider2D other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if(other.gameObject.name == "trigger")
+        {
+            Debug.Log("Enter");
+            gameObject.GetComponent<Renderer>().Transform.position+=
+        }
     }
 }
