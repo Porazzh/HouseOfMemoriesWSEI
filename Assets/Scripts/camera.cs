@@ -5,6 +5,7 @@ using UnityEngine;
 public class camera : MonoBehaviour
 {
     public GameObject player;
+<<<<<<< Updated upstream
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "zmianaKameryEvent")
@@ -22,5 +23,12 @@ public class camera : MonoBehaviour
                 Camera.main.orthographicSize = 5f;
             }
         }
+=======
+    
+
+    void Update()
+    {
+        transform.position = new Vector3(player.transform.position.x, player.transform.position.y, -10);
+>>>>>>> Stashed changes
     }
 }
