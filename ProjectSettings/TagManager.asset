@@ -5,7 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - wall
-  - zmianaKameryEvent
+  - trigger
+  - corridorCam
   layers:
   - Default
   - TransparentFX
@@ -42,4 +43,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: New Layer 1
+    uniqueID: 1054430417
+    locked: 0
+  - name: New Layer 2
+    uniqueID: 4137044557
     locked: 0

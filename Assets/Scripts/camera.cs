@@ -4,24 +4,15 @@ using UnityEngine;
 
 public class camera : MonoBehaviour
 {
-    public GameObject player;
-    private void OnCollisionEnter2D(Collision2D collision)
+    // Start is called before the first frame update
+    void Start()
     {
-        if (collision.gameObject.tag == "zmianaKameryEvent")
-        {
-            if (Camera.main.orthographicSize == 5f)
-            {
-                for (float i = 0; i < 50; i += 1)
-                {
-                    Camera.main.orthographicSize += 0.1f;
-                    new WaitForSeconds(5000f);
-                }
-            }
-            else
-            {
-                Camera.main.orthographicSize = 5f;
-            }
-        }
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }
-
