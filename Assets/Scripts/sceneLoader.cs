@@ -10,7 +10,7 @@ public class sceneLoader : MonoBehaviour
     public float czasPrzejscia;
     public void LoadMainLevel() 
     {
-        StartCoroutine(LoadLevel(1));
+        StartCoroutine(LoadLevel(3));
     }
    
 
