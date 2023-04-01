@@ -15,32 +15,15 @@ public class eventCollider : MonoBehaviour
     if (other.tag == "Player")
     {
             @object.SetActive(true);
-            //Debug.Log("plox dzia³aj");
+            //Debug.Log("plox dziaï¿½aj");
             //anim = @object.GetComponent<Animation>();
             //anim.Play();
             //Camera.main.orthographicSize = 5f;  
     }
 
     }
-
-void OnTriggerExit2D(Collider2D other)
-{
-    if (other.tag == "Player")
-    {
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-            @object.SetActive(false);
-            
-=======
-            Camera.main.orthographicSize = 10f;
->>>>>>> parent of 046e713 (Merge branch 'main' of https://github.com/Porazzh/HouseOfMemoriesWSEI)
-=======
-            Camera.main.orthographicSize = 10f;
->>>>>>> parent of 046e713 (Merge branch 'main' of https://github.com/Porazzh/HouseOfMemoriesWSEI)
-    }
 }
-}
+
 
 
 
