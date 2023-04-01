@@ -6,12 +6,15 @@ using UnityEngine;
 
 public class eventCollider : MonoBehaviour
 {
+    public GameObject @object;
+    public Animation anim;
 
     void OnTriggerEnter2D(Collider2D other)
 {   
     if (other.tag == "Player")
-    {   
-            Camera.main.orthographicSize = 5f;  
+    {
+            @object.SetActive(true);
+            
     }
 
 }
@@ -20,7 +23,7 @@ void OnTriggerExit2D(Collider2D other)
 {
     if (other.tag == "Player")
     {
-            Camera.main.orthographicSize = 10f;
+            @object.SetActive(false);
     }
 }
 }
@@ -28,15 +31,3 @@ void OnTriggerExit2D(Collider2D other)
 
 
 
-/*
-public Animation cam;
-private void Start()
-{
-    cam = GetComponent<Animation>();
-    foreach (AnimationState state in cam)
-    {
-        state.speed = 0.5f;
-    }
-
-}
-*/
