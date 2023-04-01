@@ -6,7 +6,10 @@ public class use : MonoBehaviour
 {
     private Rigidbody2D rb2D;
     private movement move;
-    bool dotkn¹ = false;
+    public Camera camerazeg;
+    public Camera cameramain;
+    
+    bool dotkna = false;
     bool dotyka;
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -21,26 +24,33 @@ public class use : MonoBehaviour
     {
         move = GetComponent<movement>();
         rb2D = gameObject.GetComponent<Rigidbody2D>();
+        
     }
 
     private void Update()
     {
      
-        if (dotyka == true && Input.GetKeyUp(KeyCode.E) && dotkn¹ == false)
+        if (dotyka == true && Input.GetKeyDown(KeyCode.E) && dotkna == false)
         {
             move.enabled = false;
-            dotkn¹ = true;
+            dotkna = true;
+            cameramain.enabled = false;
+            camerazeg.enabled = true;
+            
         }
-        else if (Input.GetKeyUp(KeyCode.E))
+        else if (Input.GetKeyDown(KeyCode.Escape))
         {
             move.enabled = true;
-            dotkn¹ = false;
+            dotkna = false;
+            cameramain.enabled = true;
+            camerazeg.enabled = false;
+            
         }
         
     }
     private void FixedUpdate()
     {
-        if (dotkn¹ == true)
+        if (dotkna == true)
         {
             rb2D.velocity = new Vector2(0f, 0f);
         }
