@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class odpzegar2 : MonoBehaviour
+public class odpZegar2 : MonoBehaviour
 {
     public bool odp2 = false;
 
@@ -17,5 +17,4 @@ public class odpzegar2 : MonoBehaviour
             odp2 = false;
         }
     }
-
 }

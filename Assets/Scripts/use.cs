@@ -8,6 +8,7 @@ public class use : MonoBehaviour
     private movement move;
     public Camera camerazeg;
     public Camera cameramain;
+
     
     bool dotkna = false;
     bool dotyka;
