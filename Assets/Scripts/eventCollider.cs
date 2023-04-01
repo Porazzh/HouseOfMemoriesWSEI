@@ -28,9 +28,13 @@ void OnTriggerExit2D(Collider2D other)
     if (other.tag == "Player")
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
             @object.SetActive(false);
             
+=======
+            Camera.main.orthographicSize = 10f;
+>>>>>>> parent of 046e713 (Merge branch 'main' of https://github.com/Porazzh/HouseOfMemoriesWSEI)
 =======
             Camera.main.orthographicSize = 10f;
 >>>>>>> parent of 046e713 (Merge branch 'main' of https://github.com/Porazzh/HouseOfMemoriesWSEI)
