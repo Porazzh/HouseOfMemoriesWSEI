@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class zegar : MonoBehaviour
+public class winZegar : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
