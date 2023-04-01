@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class sceneLoader : MonoBehaviour
-{  
-    public void Graj() 
+{
+    public Animator przejscie;
+    public float czasPrzejscia;
+    public void LoadMainLevel() 
     {
-        SceneManager.LoadScene(1, LoadSceneMode.Additive);
-        
+        StartCoroutine(LoadLevel(1));
     }
    
 
@@ -18,4 +20,13 @@ public class sceneLoader : MonoBehaviour
         Application.Quit();
         Debug.Log("quit");
     }
+
+    IEnumerator LoadLevel(int levelIndex)
+    {
+        //Play animation
+        przejscie.SetTrigger("Start");
+        yield return new WaitForSeconds(czasPrzejscia);
+        SceneManager.LoadScene(levelIndex);
+
+    }    
 }
