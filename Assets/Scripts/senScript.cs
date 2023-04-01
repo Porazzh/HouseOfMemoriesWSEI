@@ -1,17 +1,11 @@
+ï»¿using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
-using System.Collections;
-using Unity.VisualScripting;
-using static System.Net.Mime.MediaTypeNames;
-using UnityEditor.VersionControl;
 
 public class senScript : MonoBehaviour
 {
-    public TMP_Text txt1;
+    public TMP_Text txt;
     public TMP_Text txt2;
-
-    public float dzienTyg;
+    
 
     TMP_Text activeTxt;
     TMP_Text fadingTxt;
@@ -23,16 +17,17 @@ public class senScript : MonoBehaviour
     int charIdx; // Which character of the message is being typed
     float timeSinceLastChar;
 
-    float fadingTxtAlpha;
+    float fadingTxtAlpha; // 0 = invisible, 1 = visible
 
-    bool waiting = true;
+    bool waiting = true; // Are we waiting for the user to advance the dialogue?
 
     void Start()
     {
-        activeTxt = txt1;
+        activeTxt = txt;
         fadingTxt = txt2;
     }
-    private void Update()
+
+    void Update()
     {
         if (waiting) { WaitForUserInput(); }
         else { DisplayMessage(); }
@@ -42,6 +37,9 @@ public class senScript : MonoBehaviour
     void WaitForUserInput()
     {
         if (messageIdx == messages.Length - 1) { return; } // No more messages
+        {
+
+        }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -49,9 +47,6 @@ public class senScript : MonoBehaviour
             waiting = false;
         }
     }
-
-
-
 
     void AdvanceDialogue()
     {
@@ -69,6 +64,7 @@ public class senScript : MonoBehaviour
         activeTxt = fadingTxt;
         fadingTxt = tmpTxt;
     }
+
     void DisplayMessage()
     {
         var message = messages[messageIdx];
@@ -87,6 +83,7 @@ public class senScript : MonoBehaviour
             timeSinceLastChar = 0f;
             return;
         }
+
         // Type the next character if we've waited long enough
         while (timeSinceLastChar >= secondsPerChar)
         {
@@ -106,11 +103,12 @@ public class senScript : MonoBehaviour
         }
     }
 
+
     string[] messages = new[] // Some test messages to display
-     {
-         "Zapad³eœ w sen",
-         "Twoje sny staj¹ siê rzeczywistoœci¹",
-         "Przypominasz sobie coraz wiêcej",
-         "Skup siê"
+    {
+         "ZapadÅ‚eÅ› w sen",
+         "Twoje sny stajÄ… siÄ™ rzeczywistoÅ›ciÄ…",
+         "Przypominasz sobie coraz wiÄ™cej",
+         "Skup siÄ™ i zapamiÄ™taj jak najwiÄ™cej"
      };
 }
