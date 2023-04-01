@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class winZegar : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    odpzegar odpz1;
+    odpzegar2 odpz2;
+    public bool wygrana = false;
     void Update()
     {
-        
+        if (odpz1.odp1 && odpz2.odp2)
+        {
+            bool wygrana = true;
+        }
     }
 }
