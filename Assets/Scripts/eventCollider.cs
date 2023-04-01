@@ -15,28 +15,28 @@ public class eventCollider : MonoBehaviour
     if (other.tag == "Player")
     {
             @object.SetActive(true);
-            //Debug.Log("plox dziaï¿½aj");
+            //Debug.Log("plox dzia³aj");
             //anim = @object.GetComponent<Animation>();
             //anim.Play();
             //Camera.main.orthographicSize = 5f;  
     }
 
     }
-}
 
-
-
-
-
-/*
-public Animation cam;
-private void Start()
+void OnTriggerExit2D(Collider2D other)
 {
-    cam = GetComponent<Animation>();
-    foreach (AnimationState state in cam)
+    if (other.tag == "Player")
     {
-        state.speed = 0.5f;
-    }
 
+
+            @object.SetActive(false);
+            
+
+          //  Camera.main.orthographicSize = 10f;
+
+    }
 }
-*/
+}
+
+
+
